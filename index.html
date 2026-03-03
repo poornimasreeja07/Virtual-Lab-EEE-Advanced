@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced Virtual Transformer Lab</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
+<body>
+
+<h1 class="title">Advanced Virtual Transformer Lab</h1>
+
+<div id="lab-stage">
+
+    <!-- Background -->
+    <div id="lab-background"></div>
+
+    <!-- Equipment Layer -->
+    <div id="equipment-layer"></div>
+
+    <!-- Wire Layer -->
+    <svg id="wire-layer"></svg>
+
+    <!-- Terminal Layer -->
+    <div id="terminal-layer"></div>
+
+</div>
+
+<div class="control-panel">
+    <label>Voltage</label>
+    <input type="range" id="voltageSlider" min="0" max="230" value="0">
+    <span id="voltageDisplay">0 V</span>
+</div>
+
+<script src="js/engine.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/calculation.js"></script>
+
+</body>
+</html>
