@@ -55,76 +55,95 @@ function createTable() {
     scene.add(table);
 }
 
-function createTransformer() {
+function createTransformer(){
 
-    const geometry = new THREE.BoxGeometry(3, 2, 0.5);
+    const loader = new THREE.TextureLoader();
+
+    const texture = loader.load("assets/transformer.jpg");
+
+    const geometry = new THREE.BoxGeometry(3,2,0.5);
 
     const material = new THREE.MeshStandardMaterial({
-        color: 0x444444
+        map: texture
     });
 
     const transformer = new THREE.Mesh(geometry, material);
 
-    transformer.position.set(1, -1, 0);
+    transformer.position.set(1,-1,0);
 
     scene.add(transformer);
 }
 
-function createVariac() {
+function createVariac(){
 
-    const geometry = new THREE.BoxGeometry(2, 1.5, 2);
+    const loader = new THREE.TextureLoader();
+
+    const texture = loader.load("assets/variac.jpg");
+
+    const geometry = new THREE.BoxGeometry(2,1.5,2);
 
     const material = new THREE.MeshStandardMaterial({
-        color: 0xdedede
+        map: texture
     });
 
     const variac = new THREE.Mesh(geometry, material);
 
-    variac.position.set(-3, -1.2, 0);
+    variac.position.set(-3,-1.2,0);
 
     scene.add(variac);
 }
-function createVoltmeter() {
+=function createVoltmeter(){
 
-    const geometry = new THREE.BoxGeometry(1.2, 1.2, 0.4);
+    const loader = new THREE.TextureLoader();
+
+    const texture = loader.load("assets/voltmeter.jpg");
+
+    const geometry = new THREE.BoxGeometry(1.2,1.2,0.4);
 
     const material = new THREE.MeshStandardMaterial({
-        color: 0x222222
+        map: texture
     });
 
     const voltmeter = new THREE.Mesh(geometry, material);
 
-    voltmeter.position.set(3.5, -1, -1);
+    voltmeter.position.set(3.5,-1,-1);
 
     scene.add(voltmeter);
 }
 
-function createAmmeter() {
+function createAmmeter(){
 
-    const geometry = new THREE.BoxGeometry(1.2, 1.2, 0.4);
+    const loader = new THREE.TextureLoader();
+
+    const texture = loader.load("assets/ammeter.jpg");
+
+    const geometry = new THREE.BoxGeometry(1.2,1.2,0.4);
 
     const material = new THREE.MeshStandardMaterial({
-        color: 0x111111
+        map: texture
     });
 
     const ammeter = new THREE.Mesh(geometry, material);
 
-    ammeter.position.set(3.5, -1, 1);
+    ammeter.position.set(3.5,-1,1);
 
     scene.add(ammeter);
 }
+function createWattmeter(){
 
-function createWattmeter() {
+    const loader = new THREE.TextureLoader();
 
-    const geometry = new THREE.BoxGeometry(1.5, 1.5, 0.5);
+    const texture = loader.load("assets/wattmeter.jpg");
+
+    const geometry = new THREE.BoxGeometry(1.5,1.5,0.5);
 
     const material = new THREE.MeshStandardMaterial({
-        color: 0x000000
+        map: texture
     });
 
     const wattmeter = new THREE.Mesh(geometry, material);
 
-    wattmeter.position.set(0, -1, -2);
+    wattmeter.position.set(0,-1,-2);
 
     scene.add(wattmeter);
 }
