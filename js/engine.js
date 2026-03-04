@@ -84,6 +84,50 @@ function createVariac() {
 
     scene.add(variac);
 }
+function createVoltmeter() {
+
+    const geometry = new THREE.BoxGeometry(1.2, 1.2, 0.4);
+
+    const material = new THREE.MeshStandardMaterial({
+        color: 0x222222
+    });
+
+    const voltmeter = new THREE.Mesh(geometry, material);
+
+    voltmeter.position.set(3.5, -1, -1);
+
+    scene.add(voltmeter);
+}
+
+function createAmmeter() {
+
+    const geometry = new THREE.BoxGeometry(1.2, 1.2, 0.4);
+
+    const material = new THREE.MeshStandardMaterial({
+        color: 0x111111
+    });
+
+    const ammeter = new THREE.Mesh(geometry, material);
+
+    ammeter.position.set(3.5, -1, 1);
+
+    scene.add(ammeter);
+}
+
+function createWattmeter() {
+
+    const geometry = new THREE.BoxGeometry(1.5, 1.5, 0.5);
+
+    const material = new THREE.MeshStandardMaterial({
+        color: 0x000000
+    });
+
+    const wattmeter = new THREE.Mesh(geometry, material);
+
+    wattmeter.position.set(0, -1, -2);
+
+    scene.add(wattmeter);
+}
 
 function animate() {
 
