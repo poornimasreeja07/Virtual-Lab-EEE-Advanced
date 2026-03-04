@@ -9,7 +9,7 @@ class LabUI {
 
         this.createEquipment(
             "transformer",
-            "assets/transformer.jpg",
+            "./assets/transformer.jpg",
             220,
             420,
             380
@@ -17,7 +17,7 @@ class LabUI {
 
         this.createEquipment(
             "variac",
-            "assets/variac.jpg",
+            "./assets/variac.jpg",
             400,
             60,
             220
@@ -25,7 +25,7 @@ class LabUI {
 
         this.createEquipment(
             "voltmeter",
-            "assets/voltmeter.jpg",
+            "./assets/voltmeter.jpg",
             60,
             60,
             200
@@ -33,7 +33,7 @@ class LabUI {
 
         this.createEquipment(
             "ammeter",
-            "assets/ammeter.jpg",
+            "./assets/ammeter.jpg",
             60,
             300,
             200
@@ -41,7 +41,7 @@ class LabUI {
 
         this.createEquipment(
             "wattmeter",
-            "assets/wattmeter.jpg",
+            "./assets/wattmeter.jpg",
             60,
             550,
             220
