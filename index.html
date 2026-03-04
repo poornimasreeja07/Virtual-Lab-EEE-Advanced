@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Advanced Virtual Transformer Lab</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>3D Virtual Transformer Lab</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+body{
+margin:0;
+overflow:hidden;
+font-family:Segoe UI;
+background:#111;
+}
+
+.title{
+position:absolute;
+top:10px;
+left:50%;
+transform:translateX(-50%);
+color:white;
+z-index:10;
+}
+
+.control-panel{
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+color:white;
+z-index:10;
+}
+</style>
+
 </head>
 
 <body>
 
-<h1 class="title">Advanced Virtual Transformer Lab</h1>
-
-<div id="lab-stage">
-
-    <!-- Background -->
-    <div id="lab-background"></div>
-
-    <!-- Equipment Layer -->
-    <div id="equipment-layer"></div>
-
-    <!-- Wire Layer -->
-    <svg id="wire-layer"></svg>
-
-    <!-- Terminal Layer -->
-    <div id="terminal-layer"></div>
-
-</div>
+<h1 class="title">3D Virtual Transformer Lab</h1>
 
 <div class="control-panel">
-    <label>Voltage</label>
-    <input type="range" id="voltageSlider" min="0" max="230" value="0">
-    <span id="voltageDisplay">0 V</span>
+Voltage
+<input type="range" id="voltageSlider" min="0" max="230">
+<span id="voltageDisplay">0 V</span>
 </div>
+
+<!-- THREE JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <script src="js/engine.js"></script>
 <script src="js/ui.js"></script>
