@@ -23,6 +23,9 @@ function init() {
     createTable();
     createTransformer();
     createVariac();
+    createVoltmeter();
+     createAmmeter();
+     createWattmeter();
 
     animate();
 }
