@@ -2,56 +2,67 @@ class LabUI {
 
     constructor() {
         this.equipmentLayer = document.getElementById("equipment-layer");
-        this.init();
+        this.loadEquipment();
     }
 
-    init() {
-        this.addTransformer();
-        this.addVariac();
-        this.addVoltmeter();
+    loadEquipment() {
+
+        this.createEquipment(
+            "transformer",
+            "assets/transformer.jpg",
+            220,
+            420,
+            380
+        );
+
+        this.createEquipment(
+            "variac",
+            "assets/variac.jpg",
+            400,
+            60,
+            220
+        );
+
+        this.createEquipment(
+            "voltmeter",
+            "assets/voltmeter.jpg",
+            60,
+            60,
+            200
+        );
+
+        this.createEquipment(
+            "ammeter",
+            "assets/ammeter.jpg",
+            60,
+            300,
+            200
+        );
+
+        this.createEquipment(
+            "wattmeter",
+            "assets/wattmeter.jpg",
+            60,
+            550,
+            220
+        );
     }
 
     createEquipment(id, imgSrc, top, left, width) {
-        const element = document.createElement("img");
-        element.src = imgSrc;
-        element.id = id;
-        element.style.position = "absolute";
-        element.style.top = top + "px";
-        element.style.left = left + "px";
-        element.style.width = width + "px";
-        element.style.filter = "drop-shadow(0 15px 20px rgba(0,0,0,0.6))";
 
-        this.equipmentLayer.appendChild(element);
-    }
+        const img = document.createElement("img");
 
-    addTransformer() {
-        this.createEquipment(
-            "transformer",
-            "assets/transformer.png",
-            250,
-            500,
-            250
-        );
-    }
+        img.src = imgSrc;
+        img.id = id;
 
-    addVariac() {
-        this.createEquipment(
-            "variac",
-            "assets/variac.png",
-            430,
-            200,
-            200
-        );
-    }
+        img.style.position = "absolute";
+        img.style.top = top + "px";
+        img.style.left = left + "px";
+        img.style.width = width + "px";
+        img.style.borderRadius = "6px";
+        img.style.boxShadow = "0 10px 25px rgba(0,0,0,0.5)";
 
-    addVoltmeter() {
-        this.createEquipment(
-            "voltmeter",
-            "assets/voltmeter.png",
-            100,
-            200,
-            180
-        );
+        this.equipmentLayer.appendChild(img);
     }
 }
 
