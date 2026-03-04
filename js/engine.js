@@ -1,32 +1,92 @@
-class LabEngine {
+let scene, camera, renderer;
 
-    constructor() {
-        this.voltage = 0;
-        this.init();
-    }
+function init() {
 
-    init() {
-        console.log("Lab Engine Initialized");
-        this.setupVoltageControl();
-    }
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x20232a);
 
-    setupVoltageControl() {
-        const slider = document.getElementById("voltageSlider");
-        const display = document.getElementById("voltageDisplay");
+    camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+    );
 
-        slider.addEventListener("input", (e) => {
-            this.voltage = parseInt(e.target.value);
-            display.innerText = this.voltage + " V";
+    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
 
-            this.updateSimulation();
-        });
-    }
+    document.body.appendChild(renderer.domElement);
 
-    updateSimulation() {
-        console.log("Voltage Updated:", this.voltage);
-    }
+    camera.position.set(0, 3, 8);
+
+    addLights();
+    createTable();
+    createTransformer();
+    createVariac();
+
+    animate();
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-    new LabEngine();
-});
+function addLights() {
+
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(5, 10, 5);
+    scene.add(light);
+
+    const ambient = new THREE.AmbientLight(0x404040);
+    scene.add(ambient);
+}
+
+function createTable() {
+
+    const geometry = new THREE.BoxGeometry(10, 0.5, 6);
+
+    const material = new THREE.MeshStandardMaterial({
+        color: 0x8b5a2b
+    });
+
+    const table = new THREE.Mesh(geometry, material);
+
+    table.position.y = -2;
+
+    scene.add(table);
+}
+
+function createTransformer() {
+
+    const geometry = new THREE.BoxGeometry(3, 2, 0.5);
+
+    const material = new THREE.MeshStandardMaterial({
+        color: 0x444444
+    });
+
+    const transformer = new THREE.Mesh(geometry, material);
+
+    transformer.position.set(1, -1, 0);
+
+    scene.add(transformer);
+}
+
+function createVariac() {
+
+    const geometry = new THREE.BoxGeometry(2, 1.5, 2);
+
+    const material = new THREE.MeshStandardMaterial({
+        color: 0xdedede
+    });
+
+    const variac = new THREE.Mesh(geometry, material);
+
+    variac.position.set(-3, -1.2, 0);
+
+    scene.add(variac);
+}
+
+function animate() {
+
+    requestAnimationFrame(animate);
+
+    renderer.render(scene, camera);
+}
+
+window.onload = init;
